@@ -67,7 +67,7 @@ function claimConversation(oldConversationId) {
         },
         body: JSON.stringify({
             agentId: "96c78a0c-525a-45a6-8862-5a49f777a22b",
-            forece: true
+            force: "true"
           })
     }).then(function(response) {
        if(response.status >= 400)
