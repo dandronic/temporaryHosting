@@ -58,6 +58,24 @@ function closeConversation(oldConversationId) {
        throwError('Failed to close conversation ' +  oldConversationId);
       })
 }
+function claimConversation(oldConversationId) {
+    fetch('https://dev.dixa.io/v1/conversations/'+oldConversationId+'/claim', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + dixaApiToken
+        },
+        body: JSON.stringify({
+            agentId: "96c78a0c-525a-45a6-8862-5a49f777a22b",
+            forece: true
+          })
+    }).then(function(response) {
+       if(response.status >= 400)
+       throwError('Failed to claim conversation ' +  oldConversationId + ' - status code ' + response.status);
+    }).catch((error) => {
+       throwError('Failed to claim conversation ' +  oldConversationId);
+      })
+}
 
 function mergeConversations(oldConversationId, newConversationId) {
     clearError();
