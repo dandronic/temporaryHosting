@@ -66,7 +66,7 @@ function claimConversation(oldConversationId) {
             Authorization: 'Bearer ' + dixaApiToken
         },
         body: JSON.stringify({
-            agentId: 96c78a0c-525a-45a6-8862-5a49f777a22b,
+            agentId: 02cac49c-c270-4aa7-9d0b-8ef8c6b19421,
             force: true
           })
     }).then(function(response) {
