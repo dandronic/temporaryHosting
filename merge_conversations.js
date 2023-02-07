@@ -88,6 +88,7 @@ function mergeConversations(oldConversationId, newConversationId) {
                 if(messageContent) {
                     addInternalNote(newConversationId, "**Merged from conversation <a href=\"https://" + dixaDomain + ".dixa.com/conversation/" + oldConversationId + "\">" + oldConversationId + "</a>** : \n\n"+messageContent);
                     addInternalNote(oldConversationId, "Merged this conversation into conversation <a href=\"https://" + dixaDomain + ".dixa.com/conversation/"+newConversationId+"\">#" + newConversationId+"</a>");
+                    claimConversation(oldConversationId);
                     closeConversation(oldConversationId);
                 }
                 else
